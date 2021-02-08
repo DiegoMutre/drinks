@@ -32,7 +32,9 @@ const RecipesProvider = props => {
     }, [canConsult, category, name]);
 
     return (
-        <RecipesContext.Provider value={{ setSearchData, setCanConsult }}>
+        <RecipesContext.Provider
+            value={{ recipes, setSearchData, setCanConsult }}
+        >
             {props.children}
         </RecipesContext.Provider>
     );
