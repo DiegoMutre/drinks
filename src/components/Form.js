@@ -7,7 +7,7 @@ const Form = () => {
     const { categories } = useContext(CategoriesContext);
 
     // Use Recipes Context
-    const { setSearchData } = useContext(RecipesContext);
+    const { setSearchData, setCanConsult } = useContext(RecipesContext);
 
     // State for search data
     const [search, setSearch] = useState({
@@ -24,6 +24,7 @@ const Form = () => {
     const handleFormSubmit = e => {
         e.preventDefault();
         setSearchData(search);
+        setCanConsult(true);
     };
 
     return (
