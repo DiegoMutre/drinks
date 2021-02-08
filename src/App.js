@@ -1,8 +1,10 @@
+import Header from "./componets/Header";
+
 function App() {
     return (
-        <div>
-            <h1>Environment Prepared</h1>
-        </div>
+        <>
+            <Header />
+        </>
     );
 }
 
