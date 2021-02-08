@@ -1,16 +1,19 @@
 import Form from "./components/Form";
 import Header from "./components/Header";
 import CategoriesProvider from "./context/CategoriesContext";
+import RecipesProvider from "./context/RecipesContext";
 
 function App() {
     return (
         <CategoriesProvider>
-            <Header />
-            <div className="container mt-5">
-                <div className="row">
-                    <Form />
+            <RecipesProvider>
+                <Header />
+                <div className="container mt-5">
+                    <div className="row">
+                        <Form />
+                    </div>
                 </div>
-            </div>
+            </RecipesProvider>
         </CategoriesProvider>
     );
 }
