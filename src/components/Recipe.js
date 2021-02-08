@@ -35,7 +35,7 @@ const Recipe = ({ recipe }) => {
     };
 
     // Use the modal Context
-    const { setIdRecipe } = useContext(ModalContext);
+    const { recipeInfo, setRecipeInfo, setIdRecipe } = useContext(ModalContext);
 
     // Click the button
     const handleButtonClick = () => {
@@ -64,10 +64,18 @@ const Recipe = ({ recipe }) => {
                         onClose={() => {
                             handleModalClick();
                             setIdRecipe(null);
+                            setRecipeInfo({});
                         }}
                     >
                         <div style={modalStyle} className={classes.paper}>
-                            <h1>From Modal</h1>
+                            <h2>{recipeInfo.strDrink}</h2>
+                            <h3 className="mt-4">Instructions:</h3>
+                            <p>{recipeInfo.strInstructions}</p>
+                            <img
+                                className="img-fluid"
+                                src={recipeInfo.strDrinkThumb}
+                                alt={recipeInfo.strDrink}
+                            />
                         </div>
                     </Modal>
                 </div>
