@@ -43,6 +43,24 @@ const Recipe = ({ recipe }) => {
         handleModalClick();
     };
 
+    // Show ordered ingredients
+    const showIngredients = recipeInfo => {
+        let ingredients = [];
+
+        for (let i = 1; i < 16; i++) {
+            if (recipeInfo[`strIngredient${i}`]) {
+                ingredients.push(
+                    <li key={i}>
+                        {recipeInfo[`strIngredient${i}`]} -
+                        {recipeInfo[`strMeasure${i}`]}
+                    </li>
+                );
+            }
+        }
+
+        return ingredients;
+    };
+
     return (
         <div className="col-md-4 mb-3">
             <div className="card">
@@ -76,6 +94,8 @@ const Recipe = ({ recipe }) => {
                                 src={recipeInfo.strDrinkThumb}
                                 alt={recipeInfo.strDrink}
                             />
+                            <h3>Ingredients</h3>
+                            <ul>{showIngredients(recipeInfo)}</ul>
                         </div>
                     </Modal>
                 </div>
